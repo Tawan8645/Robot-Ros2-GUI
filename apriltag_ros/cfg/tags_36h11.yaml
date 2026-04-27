@@ -1,0 +1,30 @@
+/**:
+    ros__parameters:
+        image_transport: raw    # image format
+        family: 36h11           # tag family name
+        size: 0.173             # tag edge size in meter
+        max_hamming: 0          # maximum allowed hamming distance (corrected bits)
+        qos_profile: default    # optional qos_profile, "sensor_data", "default", or "system_default"
+
+        # see "apriltag.h" 'struct apriltag_detector' for more documentation on these optional parameters
+        detector:
+            threads: 1          # number of threads
+            decimate: 2.0       # decimate resolution for quad detection
+            blur: 0.0           # sigma of Gaussian blur for quad detection
+            refine: True        # snap to strong gradients
+            sharpening: 0.25    # sharpening of decoded images
+            debug: False        # write additional debugging images to current working directory
+
+
+        pose_estimation_method: "pnp"   # method for estimating the tag pose
+
+        # optional list of tags
+        tag:
+            ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]            # tag ID
+            frames: [object0, object1, object2, object3, object4, object5, object6, object7, object8, object9, object10, object11,
+                     object12, object13, object14, object15, object16, object17, object18, object19, object20, object12]  # optional frame name
+            sizes: [0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162]   # optional tag-specific edge size
+        # tag:
+        #     ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]            # tag ID
+        #     frames: [object0, object1, object2, object3, object4, object5, object6, object7, object8, object9, object10]  # optional frame name
+        #     sizes: [0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162, 0.162]   # optional tag-specific edge size
